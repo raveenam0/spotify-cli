@@ -36,8 +36,8 @@ int main() {
   setAccessToken();
   Playback user;  //one shared user object
   string commands = "song, pause, resume, next, prev, exit";
-  
   cout << "commands: " << commands << endl;
+  
   while (true) {
     cout << "spotifycli$> ";
     string input;
@@ -148,6 +148,7 @@ size_t setBody(char *buffer, size_t itemsize, size_t nitems, void *ignore) {
   return nitems;
 }
 
+//post req
 void nextOrPrev(Playback &user, string url) {
   CURL *curl;
   CURLcode result;
@@ -165,8 +166,7 @@ void nextOrPrev(Playback &user, string url) {
 
     //set header
     struct curl_slist *list = NULL;
-    string header = "Authorization: Bearer ";
-    header = header + access_token;
+    string header = "Authorization: Bearer " + access_token;
     list = curl_slist_append(list, header.c_str());
     curl_easy_setopt(curl, CURLOPT_HTTPHEADER, list);
 
@@ -200,6 +200,7 @@ void nextOrPrev(Playback &user, string url) {
 }
 
 //scopes: user-modify-playback-state
+//put req
 void pauseOrResume(Playback &user, string url) {
   CURL *curl;
   CURLcode result;
@@ -217,8 +218,7 @@ void pauseOrResume(Playback &user, string url) {
 
     //set header
     struct curl_slist *list = NULL;
-    string header = "Authorization: Bearer ";
-    header = header + access_token;
+    string header = "Authorization: Bearer " + access_token;
     list = curl_slist_append(list, header.c_str());
     curl_easy_setopt(curl, CURLOPT_HTTPHEADER, list);
 
@@ -252,6 +252,7 @@ void pauseOrResume(Playback &user, string url) {
 }
 
 //scopes: user-read-playback-state
+//get req
 void getCurrentState(Playback &user) {
   CURL *curl;
   CURLcode result;
@@ -267,8 +268,7 @@ void getCurrentState(Playback &user) {
 
     //set header
     struct curl_slist *list = NULL;
-    string header = "Authorization: Bearer ";
-    header = header + access_token;
+    string header = "Authorization: Bearer " + access_token;
     list = curl_slist_append(list, header.c_str());
     curl_easy_setopt(curl, CURLOPT_HTTPHEADER, list);
 

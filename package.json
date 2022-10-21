@@ -1,0 +1,24 @@
+{
+  "name": "spotifycli",
+  "version": "1.0.0",
+  "description": "This is a program that allows the user to get what song they are currently listening to, pause the current song, resume the current song, skip to the next song, and skip to the previous song using the command line. This is done using the [Spotify API](https://developer.spotify.com/documentation/web-api/).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raveenam0/spotify-cli.git"
+  },
+  "author": "Raveena",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/raveenam0/spotify-cli/issues"
+  },
+  "homepage": "https://github.com/raveenam0/spotify-cli#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "cross-fetch": "^3.1.5",
+    "express": "^4.18.1"
+  }
+}
