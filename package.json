@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/raveenam0/spotify-cli#readme",
   "dependencies": {
+    "cors": "^2.8.5",
+    "cross-fetch": "^3.1.5",
     "express": "^4.18.1"
   }
 }
